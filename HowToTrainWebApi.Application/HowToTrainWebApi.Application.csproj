@@ -40,7 +40,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppServiceBase.cs" />
+    <Compile Include="CidadeAppService.cs" />
+    <Compile Include="EnderecoAppService.cs" />
+    <Compile Include="EstadoAppService.cs" />
+    <Compile Include="Interface\IAppServiceBase.cs" />
+    <Compile Include="Interface\ICidadeAppService.cs" />
+    <Compile Include="Interface\IEnderecoAppService.cs" />
+    <Compile Include="Interface\IEstadoAppService.cs" />
+    <Compile Include="Interface\ILoginAppService.cs" />
+    <Compile Include="Interface\IPaisAppService.cs" />
+    <Compile Include="Interface\IRegistroAppService.cs" />
+    <Compile Include="LoginAppService.cs" />
+    <Compile Include="PaisAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistroAppService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HowToTrainWebApi.Domain\HowToTrainWebApi.Domain.csproj">
+      <Project>{a87f6a54-3c77-4af6-bf22-dcf0d9df2ae5}</Project>
+      <Name>HowToTrainWebApi.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

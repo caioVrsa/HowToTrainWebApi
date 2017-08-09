@@ -3,13 +3,13 @@ using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System;
-using HowToTrainWebApi.Infra.Data.EntotyConfig;
+using HowToTrainWebApi.Infra.Data.EntityConfig;
 
 namespace HowToTrainWebApi.Infra.Data.Context
 {
     public class HowToTrainWebApiContext : DbContext
     {
-        public HowToTrainWebApiContext() : base("HowToTrainWebApiDb")
+        public HowToTrainWebApiContext() : base("HowToTrainWebApiDbNew")
         {
 
         }
@@ -18,6 +18,8 @@ namespace HowToTrainWebApi.Infra.Data.Context
         public DbSet<Estado> Estados { get; set; }
         public DbSet<Cidade> Cidades { get; set; }
         public DbSet<Endereco> Enderecos { get; set; }
+        public DbSet<Registro> Registros { get; set; }
+        public DbSet<Login> Logins { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -33,6 +35,8 @@ namespace HowToTrainWebApi.Infra.Data.Context
             modelBuilder.Configurations.Add(new EstadoConfiguration());
             modelBuilder.Configurations.Add(new CidadeConfiguration());
             modelBuilder.Configurations.Add(new EnderecoConfiguration());
+            modelBuilder.Configurations.Add(new RegistroConfiguration());
+            modelBuilder.Configurations.Add(new LoginConfiguration());
         }
 
         public override int SaveChanges()

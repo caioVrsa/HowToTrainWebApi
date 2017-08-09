@@ -47,19 +47,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Context\Context.cs" />
+    <Compile Include="Context\HowToTrainWebApiContext.cs" />
+    <Compile Include="EntityConfig\CidadeConfiguration.cs" />
+    <Compile Include="EntityConfig\EnderecoConfiguration.cs" />
+    <Compile Include="EntityConfig\EstadoConfiguration.cs" />
+    <Compile Include="EntityConfig\LoginConfiguration.cs" />
+    <Compile Include="EntityConfig\PaisConfiguration.cs" />
+    <Compile Include="EntityConfig\RegistroConfiguration.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\CidadeRepository.cs" />
+    <Compile Include="Repositories\EnderecoRepository.cs" />
+    <Compile Include="Repositories\EstadoRepository.cs" />
+    <Compile Include="Repositories\LoginRepository.cs" />
+    <Compile Include="Repositories\PaisRepostory.cs" />
+    <Compile Include="Repositories\RegistroRepository.cs" />
+    <Compile Include="Repositories\RepositoryBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HowToTrainWebApi.Domain\HowToTrainWebApi.Domain.csproj">
       <Project>{a87f6a54-3c77-4af6-bf22-dcf0d9df2ae5}</Project>
       <Name>HowToTrainWebApi.Domain</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="EntotyConfig\" />
-    <Folder Include="Repositories\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

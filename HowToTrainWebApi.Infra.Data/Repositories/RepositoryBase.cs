@@ -1,7 +1,9 @@
-﻿using HowToTrainWebApi.Domain.Interfaces;
-using HowToTrainWebApi.Infra.Data.Context;
+﻿using HowToTrainWebApi.Infra.Data.Context;
 using System;
-using System.Collections;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using HowToTrainWebApi.Domain.Interfaces.Repositories;
 
 namespace HowToTrainWebApi.Infra.Data.Repositories
 {
@@ -20,24 +22,26 @@ namespace HowToTrainWebApi.Infra.Data.Repositories
             throw new NotImplementedException();
         }
 
-        public IEnumerable GetAll()
+        public IEnumerable<TEntity> GetAll()
         {
-            throw new NotImplementedException();
+            return Db.Set<TEntity>().AsNoTracking().ToList();
         }
 
         public TEntity GetById(int id)
         {
-            throw new NotImplementedException();
+            return Db.Set<TEntity>().Find(id);
         }
 
         public void Remove(TEntity obj)
         {
-            throw new NotImplementedException();
+            Db.Set<TEntity>().Remove(obj);
+            Db.SaveChanges();
         }
 
         public void Update(TEntity obj)
         {
-            throw new NotImplementedException();
+            Db.Entry(obj).State = EntityState.Modified;
+            Db.SaveChanges();
         }
     }
 }
